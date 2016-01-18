@@ -1,0 +1,14 @@
+language: python
+python:
+  - "2.7"
+sudo: required
+env:
+  global:
+    - WTFORMS="<2.1"
+install: 
+  - pip install WTForms
+  - pip install -r requirements.txt
+  - make install
+
+script: 
+  - make test
