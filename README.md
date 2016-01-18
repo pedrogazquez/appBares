@@ -19,16 +19,16 @@ Mi aplicación se encarga de llevar una serie de bares y sus correspondientes ta
 
 # Integración Continua
 
-Para realizar los tests de mi proyecto he usado la libreria de test TestCase de django. Son tests flexibles y muy usados en este lenguaje. Los tests que he realizado los he integrado dentro de las herramientas de construcción, incluyendo un objetivo make test en [mi makefile](https://github.com/pedrogazquez/appBares/blob/master/Makefile). Para configurar el sistema de integración continua de forma que lance los tests automáticamente he usado Travis-CI . [Más info]()
+Para realizar los tests de mi proyecto he usado la libreria de test TestCase de django. Son tests flexibles y muy usados en este lenguaje. Los tests que he realizado los he integrado dentro de las herramientas de construcción, incluyendo un objetivo make test en [mi makefile](https://github.com/pedrogazquez/appBares/blob/master/Makefile). Para configurar el sistema de integración continua de forma que lance los tests automáticamente he usado Travis-CI . [Más info](https://github.com/pedrogazquez/appBares/blob/master/documentacion/integracionContinua.md)
 
 # Despliegue de mi aplicación en un PaaS/SaaS: Heroku
 
 [![Build Status](https://snap-ci.com/pedrogazquez/appBares/branch/master/build_image)](https://snap-ci.com/pedrogazquez/appBares/branch/master)
 
-Para subir la app a Heroku hay que definir un archivo [procfile](https://github.com/pedrogazquez/appBares/blob/master/Procfile) que junto a nuestro [requirements.txt](https://github.com/pedrogazquez/appBares/blob/master/requirements.txt) nos hará falta para subir la aplicación a Heroku, [la he llamado appbares](http://appbares.herokuapp.com/rango/). Para ello lo que he hecho ha sido, primero registrarme en heroku, después he clonado el repositorio de mi app. Lo proximo que hay que hacer es crear el heroku con las órdenes pertinentes. [Más info]()
+Para subir la app a Heroku hay que definir un archivo [procfile](https://github.com/pedrogazquez/appBares/blob/master/Procfile) que junto a nuestro [requirements.txt](https://github.com/pedrogazquez/appBares/blob/master/requirements.txt) nos hará falta para subir la aplicación a Heroku, [la he llamado appbares](http://appbares.herokuapp.com/rango/). Para ello lo que he hecho ha sido, primero registrarme en heroku, después he clonado el repositorio de mi app. Lo proximo que hay que hacer es crear el heroku con las órdenes pertinentes. [Más info](https://github.com/pedrogazquez/appBares/blob/master/documentacion/despliegueHeroku.md)
 
 # DOCKER: Entorno de pruebas.
-Lo primero que he hecho para crear la imagen, es crear el fichero Dockerfile [Más info]()
+Lo primero que he hecho para crear la imagen, es crear el fichero [Dockerfile](https://github.com/pedrogazquez/appBares/blob/master/Dockerfile), luego una registrado en hub.docker autorizamos para que se conecte a GitHub y conectar el repositorio[Más info](https://github.com/pedrogazquez/appBares/blob/master/documentacion/entornoDocker.md)
 
 ##Inscripción en el certamen de Proyectos Libres de la UGR 2015-2016##
 Aquí adjunto la imagen de la inscripción realizada correctamente en el Certamen:

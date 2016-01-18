@@ -1,4 +1,4 @@
-Lo primero que he hecho para crear la imagen, es crear el fichero [Dockerfile](https://github.com/pedrogazquez/Proyecto-IV/blob/master/Dockerfile) el cual contiene lo siguiente:
+Lo primero que he hecho para crear la imagen, es crear el fichero [Dockerfile](https://github.com/pedrogazquez/appBares/blob/master/Dockerfile) el cual contiene lo siguiente:
 ```
 FROM ubuntu:latest
 
@@ -10,7 +10,7 @@ RUN sudo apt-get -y update
 
 #Descargar app
 RUN sudo apt-get install -y git
-RUN git clone https://github.com/pedrogazquez/Proyecto-IV.git
+RUN git clone https://github.com/pedrogazquez/appBares.git
 
 #Instalar python
 RUN sudo apt-get install -y python-setuptools
@@ -26,7 +26,7 @@ RUN sudo easy_install Pillow
 RUN sudo pip install --upgrade pip
 
 #Instalar app
-RUN cd Proyecto-IV && make install
+RUN make install
 ```
 He tenido un problema con la criptografía de python y tras mucho buscar e indagar lo he solucionado instalando el paquete **libffi-dev**.
 
@@ -40,13 +40,13 @@ Luego me he registrado en la web de [hub.docker](https://hub.docker.com/) y he a
 
 ## Entorno de pruebas Docker en local
 
-Para realizar esto en [mi makefile](https://github.com/pedrogazquez/Proyecto-IV/blob/master/Makefile) he añadido las ordenes necesarias para crear el entorno, estas se llevan a cabo mediante make docker, que contiene:
+Para realizar esto en [mi makefile](https://github.com/pedrogazquez/appBares/blob/master/Makefile) he añadido las ordenes necesarias para crear el entorno, estas se llevan a cabo mediante make docker, que contiene:
 
 ```
 	sudo apt-get update
  	sudo apt-get install -y docker.io
- 	sudo docker pull pedrogazquez/proyecto-iv
- 	sudo docker run -t -i pedrogazquez/proyecto-iv /bin/bash
+ 	sudo docker pull pedrogazquez/appBares
+ 	sudo docker run -t -i pedrogazquez/appBares /bin/bash
  	
 ```
 
