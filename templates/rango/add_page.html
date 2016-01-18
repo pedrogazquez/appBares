@@ -1,0 +1,32 @@
+{% extends "rango/base.html" %}
+
+{% block title %}Aniadir una nueva tapa al bar {{ bar_name }}{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+    <h1>Aniadir una nueva tapa al bar {{ bar.name}}</h1>
+
+    <br/>
+
+    <div class="container">
+		
+		 <form id="tapa_form" method="post" action="/rango/add_page/{{ bar.slug }}/">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+                {{ field.errors }}
+                {{ field.help_text }}
+                <br/>
+                {{ field }}
+                <br/>
+            {% endfor %}
+
+            <br/>
+            <input class="btn btn-primary" type="submit" name="submit" value="Crear Tapa"/>
+        </form>
+    </div>
+</div>
+{% endblock %}

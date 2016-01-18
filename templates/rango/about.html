@@ -1,0 +1,54 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title %}About{% endblock %}
+
+{% block head %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#grande").click(function(){
+			$("*").css({ "font-size": "103%"});
+		});
+	});
+	</script>
+
+	<script>
+	$(document).ready(function(){
+		$("#masgrande").click(function(){
+			$("*").css({ "font-size": "106%"});
+		});
+	});
+	</script>
+
+	<script>
+	$(document).ready(function(){
+		$("#peque").click(function(){
+			$("*").css({ "font-size": "90%"});
+		});
+	});
+	</script>
+
+	<script>
+	$(document).ready(function(){
+		$("#normal").click(function(){
+			$("*").css({ "font-size": "100%"});
+		});
+	});
+	</script>
+
+{% endblock %}
+
+{% block body_block %}
+
+    <div id="container" style="height: 300px">
+			<h1><br>Diseño de Aplicaciones para Internet</br></h1>
+			<h2> Pedro Gázquez Navarrete </h2>
+			<button id='grande' class="btn btn-default btn-xs">Letra grande</button>
+			<button id='masgrande' class="btn btn-default btn-xs">Letra mas grande</button>
+			<button id='peque' class="btn btn-default btn-xs">Letra pequenia</button>
+			<button id='normal' class="btn btn-default btn-xs">Letra normal</button>
+	</div>
+    <div>
+		<p> Practicas 4 5 6 y 7 de DAI.</p>
+    </div>
+{% endblock %}

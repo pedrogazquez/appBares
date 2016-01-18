@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C/DTD HTML 4.01//EN" "http://w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>
+			Grafico de Visitas
+		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+		<script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+		<script src="http://code.highcharts.com/modules/exporting.js" type="text/javascript"></script>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<div id="container" style="height: 300px">
+<script type="text/javascript">
+			var nombres = []
+			var visitas = []
+			{%if bares %}
+				{% for bar in bares %}
+					nombres.push("{{ bar.name}}")
+					visitas.push({{ bar.views }})
+				{% endfor %}
+			{% endif %}
+			$(function () { 
+				$('#container').highcharts({
+					chart: {
+						type: 'bar'
+					},
+					title: {
+						text: 'Grafica de visitas'
+					},
+					xAxis: {
+						categories: nombres
+					},
+					yAxis: {
+						min: 0, max: 50,
+						tickInterval: 1,
+						title: {
+							text: 'Numero de visitas'
+						}
+					},
+					series: [{
+							name: 'Visitas',
+							data: visitas	
+					}],
+				});
+			});
+		</script>
+		</div>
+		<div id="container" style="height: 300px">
+			<button onclick="window.location.href='/rango/'">Volver a Inicio</button>
+		</div>
+	</head>
+</html>

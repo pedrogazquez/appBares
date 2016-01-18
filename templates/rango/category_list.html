@@ -1,0 +1,9 @@
+<ul class="nav nav-list">
+	{% if cat_list %}
+		{% for cat in cat_list %}
+			<li><a href="/rango/bar/{{ cat.slug }}">{{ cat.name }}</a></li>
+		{% endfor %}
+		{% else %}
+			<li>No hay bares por el momento.</li>
+	{% endif %}
+</ul>

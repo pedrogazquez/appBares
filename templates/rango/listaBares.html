@@ -1,0 +1,29 @@
+{% extends "rango/base.html" %}
+
+{% block title %}Welcome to Rango!{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+    <h1>Ready to Rango</h1>
+
+    <p>Find, Add, Share and Rango useful links and resources.</p>
+</div>
+
+<div class="row-fluid">
+    <div class="span6">
+        <h2>Lista de BARES:</h2>
+        {% if bares %}
+        <ul>
+            {% for bar in bares %}
+            <h3><li><a href="/rango/bar/{{ bar.slug }}">{{ bar.name }}  </a></h3> <a href="/rango/add_page/{{ bar.slug }}">Insertar tapa en este bar</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+			<strong>No hay bares actualmente.</strong>
+        {% endif %}
+
+    </div> 
+</div><!--/row-->
+
+
+{% endblock %}

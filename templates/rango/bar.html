@@ -1,0 +1,40 @@
+{% extends "rango/base.html" %}
+
+{% block title %}Welcome to Rango!{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+    <h1>Ready to Rango</h1>
+
+    <p>Find, Add, Share and Rango useful links and resources.</p>
+</div>
+
+<div class="row-fluid">
+    <div class="span6">
+        {% if bar %}
+        <h1>Bar {{ bar_name }}</h1>
+		<h2>Direccion: </h2><h3>{{ bar.dire }}</h3>
+		{% load easy_maps_tags %}
+		<!-- Default map with 300x400 dimensions -->
+		{% easy_map bar.dire 300 400 %}
+		<h3><a href="/rango/add_page/{{ bar.slug }}"> Crear nueva tapa para este bar </a></h3>
+		<h2>Lista de tapas: </h2>
+		{% if tapas %}
+            <ul>
+                {% for tapa in tapas %}
+					<h2><li>{{ tapa.nombre }} </h2> <button onclick="window.location.href='/rango/meGusta/{{ tapa.nombre }}'"> Me gusta </button></li>
+					<a href="{{ tapa.url }}"><img src="{{ tapa.url }}" height="182" width="262" /></a>
+					<p>{{ tapa.views }} Me gusta</p>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>Este bar no tiene tapas disponibles.</strong>
+            {% endif %}
+        {% else %}
+            El bar {{ bar_name }} no existe!
+        {% endif %}
+    </div> 
+</div><!--/row-->
+
+
+{% endblock %}

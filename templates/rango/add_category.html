@@ -1,0 +1,32 @@
+{% extends "rango/base.html" %}
+
+{% block title %}Crear un nuevo Bar{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+    <h1>Crear un nuevo Bar</h1>
+    <br/>
+
+    <div class="container">
+
+        <form class="span6" id="category_form" method="post" action="/rango/add_category/">
+
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+            {{ field.errors }}
+            {{ field.help_text}}<br/>
+            {{ field }}
+            {% endfor %}
+
+            <br/>
+            <input class="btn btn-primary" type="submit" name="submit" value="Crear Bar"/>
+
+        </form>
+
+    </div>
+</div>
+{% endblock %}

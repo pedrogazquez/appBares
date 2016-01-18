@@ -1,0 +1,44 @@
+{% extends "rango/base.html" %}
+
+{% block title %}Welcome to Rango!{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+    <h1>Ready to Rango</h1>
+
+    <p>Find, Add, Share and Rango useful links and resources.</p>
+</div>
+
+<div class="row-fluid">
+    <div class="span6">
+        <h2>Los mejores 5 bares</h2>
+        {% if bares %}
+        <ul>
+            {% for bar in bares %}
+            <li><a href="/rango/bar/{{ bar.slug }}">{{ bar.name }} </a> ({{ bar.views }} visitas) <a href="/rango/add_page/{{ bar.slug }}"> Crear nueva tapa para este bar </a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+			<strong>No hay bares actualmente.</strong>
+        {% endif %}
+	</div>
+    <!--/span-->
+    <div class="span6">
+        <h2>Las 5 mejores tapas</h2>
+        {% if tapas %}
+        <ul>
+            {% for tapa in tapas %}
+            <li><a href="{{ tapa.url}}">{{ tapa.nombre }}</a> - {{ tapa.bar}} ({{ tapa.views }} Me gusta)</li>
+			<button onclick="window.location.href='/rango/meGusta/{{ tapa.nombre }}'"> Me gusta </button>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <strong>No hay tapas en este momento.</strong>
+        {% endif %}
+
+    </div>
+    <!--/span-->
+</div><!--/row-->
+
+
+{% endblock %}
