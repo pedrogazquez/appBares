@@ -23,6 +23,8 @@ Para realizar los tests de mi proyecto he usado la libreria de test TestCase de 
 
 # Despliegue de mi aplicación en un PaaS/SaaS: Heroku
 
+[![Heroku](https://www.herokucdn.com/deploy/button.png)](http://appbares.herokuapp.com/rango/)
+
 [![Build Status](https://snap-ci.com/pedrogazquez/appBares/branch/master/build_image)](https://snap-ci.com/pedrogazquez/appBares/branch/master)
 
 Para subir la app a Heroku hay que definir un archivo [procfile](https://github.com/pedrogazquez/appBares/blob/master/Procfile) que junto a nuestro [requirements.txt](https://github.com/pedrogazquez/appBares/blob/master/requirements.txt) nos hará falta para subir la aplicación a Heroku, [la he llamado appbares](http://appbares.herokuapp.com/rango/). Para ello lo que he hecho ha sido, primero registrarme en heroku, después he clonado el repositorio de mi app. Lo proximo que hay que hacer es crear el heroku con las órdenes pertinentes. [Más info](https://github.com/pedrogazquez/appBares/blob/master/documentacion/despliegueHeroku.md)
