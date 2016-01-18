@@ -1,4 +1,4 @@
-chardet==2.0.1
+chardet==2.3.0
 colorama==0.2.5
 Django==1.7
 django-appconf==1.0.1
