@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.conf import settings # New Import
 from django.conf.urls.static import static # New Import
 from registration.backends.simple.views import RegistrationView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 # Create a new class that redirects the user to the index page, if successful at logging
 class MyRegistrationView(RegistrationView):
@@ -22,6 +23,8 @@ urlpatterns = patterns('',
 
 if not settings.DEBUG:
 	urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()
 
 if settings.DEBUG:
 	urlpatterns += patterns(
