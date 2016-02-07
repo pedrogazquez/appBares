@@ -46,7 +46,10 @@ vagrant provision
 [Más info](https://github.com/pedrogazquez/appBares/blob/master/documentacion/entornoDocker.md)
 
 # Despliegue en un IaaS: Azure
-Para realizar el despliegue en un IaaS (Infrastructure as a Service) que en mi caso ha sido en Azure, podemos desplegar la aplicación automáticamente con el script [despliegueAzure.sh](https://github.com/pedrogazquez/appBares/blob/master/VAGRANT-baresquesada/despliegueAzure.sh) que contiene lo siguiente:
+
+[![Azure](http://azuredeploy.net/deploybutton.png)](http://baresquesada.cloudapp.net/rango/) 
+
+Para realizar el despliegue en un IaaS (Infrastructure as a Service) que en mi caso ha sido en Azure, podemos desplegar la aplicación automáticamente con el script [despliegueAzure.sh](https://github.com/pedrogazquez/appBares/blob/master/VAGRANT-baresquesada/despliegueAzure.sh) ejecutando **./despliegueAzure.sh** que contiene lo siguiente:
 
 ```
 #!/bin/bash
@@ -56,8 +59,8 @@ vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dum
 vagrant up --provider=azure
 vagrant provision 
 ```
-
 Lo que hace este script es clonar mi repositorio de GitHub y acceder a el, luego lleva a cabo el despligue con Vagrant usando mi [Vagrantfile](https://github.com/pedrogazquez/appBares/blob/master/VAGRANT-baresquesada/Vagrantfile). [Aquí mi aplicación desplegada](http://baresquesada.cloudapp.net/rango/).
+
 [Más info](https://github.com/pedrogazquez/appBares/blob/master/documentacion/despliegueAzure.md)
 
 ##Inscripción en el certamen de Proyectos Libres de la UGR 2015-2016##

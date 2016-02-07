@@ -35,7 +35,7 @@ Para autenticar Azure desde Vagranfile creamos un archivo .pem y lo concatemos e
 openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azurevagrant.pem
 cat azurevagrant.key > azurevagrant.pem
 ```
-Luego creamos el fichero Vagranfile:
+Luego creamos el fichero [Vagranfile](https://github.com/pedrogazquez/appBares/blob/master/VAGRANT-baresquesada/Vagrantfile):
 ```
 VAGRANTFILE_API_VERSION = '2'
 
@@ -74,12 +74,12 @@ Ahora definimos la variable de entorno ANSIBLE_HOSTS:
 ```
 export ANSIBLE_HOSTS=~/Escritorio/appdefinitiva/ansible_hosts
 ```
-Ahora añadimos lo siguiente en el archivo ansible_host:
+Ahora añadimos lo siguiente en el archivo [ansible_hosts](https://github.com/pedrogazquez/appBares/blob/master/VAGRANT-baresquesada/ansible_hosts):
 ```
 [localhost]
 192.168.56.10
 ```
-Y definimos el archivo ansiblebares.yml:
+Y definimos el archivo [ansiblebares.yml](https://github.com/pedrogazquez/appBares/blob/master/VAGRANT-baresquesada/ansiblebares.yml):
 ```
 - hosts: azure
   sudo: yes
@@ -114,6 +114,19 @@ vagrant up --provider=azure
 vagrant provision (si la máquina ya está creada)
 ```
 La diferencia es que con el primer comando se crea la máquina en Azure a la vez que se procede a su despliegue configuración y ejecución, mientras que el segundo comando es para cuando ya tenemos creada la máquina en Azure.
+
+Para automatizar todas estas tareas he creado un script [despliegueAzure.sh](https://github.com/pedrogazquez/appBares/blob/master/VAGRANT-baresquesada/despliegueAzure.sh):
+
+```
+#!/bin/bash
+git clone https://github.com/pedrogazquez/appBares.git
+cd appBares/VAGRANT-baresquesada/
+vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
+vagrant up --provider=azure
+vagrant provision 
+```
+Para ejecutarlo simplemente hacemos ./despliegueAzure.sh.
+
 Una vez que se realizan todas las tareas se queda ejecutándose la app:
 ![imagenvagrantprovider](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-07%20230451_zps7ahmhy7f.png)
 
