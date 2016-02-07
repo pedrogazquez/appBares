@@ -1,0 +1,17 @@
+- hosts: azure
+  sudo: yes
+  remote_user: vagrant
+  tasks:
+  - name: Instalar paquetes 
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=git state=present
+  - name: Descargar aplicacion de GitHub
+    git: repo=https://github.com/pedrogazquez/appBares.git dest=appBares clone=yes force=yes
+  - name: Permisos de ejecucion
+    command: chmod -R +x appBares
+  - name: Instalar requisitos
+    command: sudo pip install -r appBares/requirements.txt
+  - name: ejecutar
+    command: nohup sudo python appBares/manage.py runserver 0.0.0.0:80
