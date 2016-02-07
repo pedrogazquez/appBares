@@ -10,6 +10,8 @@ Proyecto de realización de una aplicación de bares y sus correspondientes tapa
 
 [![Build Status](https://snap-ci.com/pedrogazquez/appBares/branch/master/build_image)](https://snap-ci.com/pedrogazquez/appBares/branch/master)
 
+[![Azure](http://azuredeploy.net/deploybutton.png)](http://baresquesada.cloudapp.net/rango/) 
+
 ##Descripción##
 Realización de la infraestructura virtual necesaria para la aplicación (integración continua, despliegue en un PaaS/SaaS, entorno de pruebas DOCKER y virtualización de la app).
 
@@ -31,6 +33,21 @@ Para subir la app a Heroku hay que definir un archivo [procfile](https://github.
 
 # DOCKER: Entorno de pruebas.
 Lo primero que he hecho para crear la imagen, es crear el fichero [Dockerfile](https://github.com/pedrogazquez/appBares/blob/master/Dockerfile), luego una registrado en hub.docker autorizamos para que se conecte a GitHub y conectar el repositorio. [Más info](https://github.com/pedrogazquez/appBares/blob/master/documentacion/entornoDocker.md)
+
+# Despliegue en un IaaS: Azure
+Para realizar el despliegue en un IaaS (Infrastructure as a Service) que en mi caso ha sido en Azure, podemos desplegar la aplicación automáticamente con el script [despliegueAzure.sh](https://github.com/pedrogazquez/appBares/blob/master/VAGRANT-baresquesada/despliegueAzure.sh) que contiene lo siguiente:
+
+```
+#!/bin/bash
+git clone https://github.com/pedrogazquez/appBares.git
+cd appBares/VAGRANT-baresquesada/
+vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
+vagrant up --provider=azure
+vagrant provision 
+```
+
+Lo que hace es clonar el repositorio y posteriormente con Vagrant descargamos una distri
+ [Aquí mi aplicación desplegada](http://baresquesada.cloudapp.net/rango/)
 
 ##Inscripción en el certamen de Proyectos Libres de la UGR 2015-2016##
 Aquí adjunto la imagen de la inscripción realizada correctamente en el Certamen:
