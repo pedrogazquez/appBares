@@ -32,7 +32,18 @@ Para realizar los tests de mi proyecto he usado la libreria de test TestCase de 
 Para subir la app a Heroku hay que definir un archivo [procfile](https://github.com/pedrogazquez/appBares/blob/master/Procfile) que junto a nuestro [requirements.txt](https://github.com/pedrogazquez/appBares/blob/master/requirements.txt) nos hará falta para subir la aplicación a Heroku, [la he llamado appbaresdf](https://appbaresdf.herokuapp.com/rango/). Para ello lo que he hecho ha sido, primero registrarme en heroku, después he clonado el repositorio de mi app. Lo proximo que hay que hacer es crear el heroku con las órdenes pertinentes. [Más info](https://github.com/pedrogazquez/appBares/blob/master/documentacion/despliegueHeroku.md)
 
 # DOCKER: Entorno de pruebas.
-Lo primero que he hecho para crear la imagen, es crear el fichero [Dockerfile](https://github.com/pedrogazquez/appBares/blob/master/Dockerfile), luego una registrado en hub.docker autorizamos para que se conecte a GitHub y conectar el repositorio. [Más info](https://github.com/pedrogazquez/appBares/blob/master/documentacion/entornoDocker.md)
+Lo primero que he hecho para crear la imagen, es crear el fichero [Dockerfile](https://github.com/pedrogazquez/appBares/blob/master/Dockerfile), luego una registrado en hub.docker autorizamos para que se conecte a GitHub y conectar el repositorio. Este es mi script:
+
+```
+#!/bin/bash
+git clone https://github.com/pedrogazquez/appBares.git
+cd appBares/VAGRANT-baresquesada/
+vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
+vagrant up --provider=azure
+vagrant provision 
+```
+
+[Más info](https://github.com/pedrogazquez/appBares/blob/master/documentacion/entornoDocker.md)
 
 # Despliegue en un IaaS: Azure
 Para realizar el despliegue en un IaaS (Infrastructure as a Service) que en mi caso ha sido en Azure, podemos desplegar la aplicación automáticamente con el script [despliegueAzure.sh](https://github.com/pedrogazquez/appBares/blob/master/VAGRANT-baresquesada/despliegueAzure.sh) que contiene lo siguiente:
@@ -46,8 +57,8 @@ vagrant up --provider=azure
 vagrant provision 
 ```
 
-Lo que hace es clonar el repositorio y posteriormente con Vagrant descargamos una distri
- [Aquí mi aplicación desplegada](http://baresquesada.cloudapp.net/rango/)
+Lo que hace este script es clonar mi repositorio de GitHub y acceder a el, luego lleva a cabo el despligue con Vagrant usando mi [Vagrantfile](https://github.com/pedrogazquez/appBares/blob/master/VAGRANT-baresquesada/Vagrantfile). [Aquí mi aplicación desplegada](http://baresquesada.cloudapp.net/rango/).
+[Más info](https://github.com/pedrogazquez/appBares/blob/master/documentacion/despliegueAzure.md)
 
 ##Inscripción en el certamen de Proyectos Libres de la UGR 2015-2016##
 Aquí adjunto la imagen de la inscripción realizada correctamente en el Certamen:
