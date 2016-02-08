@@ -63,6 +63,12 @@ Lo que hace este script es clonar mi repositorio de GitHub y acceder a el, luego
 
 [Más info](https://github.com/pedrogazquez/appBares/blob/master/documentacion/despliegueAzure.md)
 
+## Despliegue remoto: Fabric
+
+[Fabric](http://www.fabfile.org/) es una librería y herramienta de línea de comandos de Python que usaremos con la finalidad de hacer más eficiente el uso de SSH para el despliegue de nuestra app. Con esta librería lo que hacemos es añadir un archivo [fabfile.py]() en el que definimos una o varias funciones y que ejecutamos cada una desde la herramienta de línea de comandos fab.
+
+[Más info]()
+
 ##Inscripción en el certamen de Proyectos Libres de la UGR 2015-2016##
 Aquí adjunto la imagen de la inscripción realizada correctamente en el Certamen:
 

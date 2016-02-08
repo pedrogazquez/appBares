@@ -1,0 +1,2 @@
+# Despliegue remoto: Fabric
+[Fabric](http://www.fabfile.org/) es una librería y herramienta de línea de comandos de Python que usaremos con la finalidad de hacer más eficiente el uso de SSH para el despliegue de nuestra app. Con esta librería lo que hacemos es añadir un archivo [fabfile.py]() en el que definimos una o varias funciones y que ejecutamos cada una desde la herramienta de línea de comandos fab.
