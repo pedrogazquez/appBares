@@ -24,7 +24,7 @@ urlpatterns += patterns('',
         (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
     )
 ```
-También he desplegado mi apliación de DAI en Azure como se puede ver en [este enlace](http://azuredeploy.net/deploybutton.png)](http://baresquesada.cloudapp.net/rango/) 
+También he desplegado mi apliación de DAI en Azure como se puede ver en [este enlace](http://baresquesada.cloudapp.net/rango/) 
 Lo proximo que he hecho ha sido crear un proceso de integración contínua junto al despliegue automático tanto en Heroku como en Snap CI. Para realizarlo en heroku, al conectarlo con GitHub debes aceptar la siguiente ventana emergente:
 
 ![heroku123](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20005315_zpssvdmjoei.png)
