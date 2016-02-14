@@ -49,7 +49,7 @@ vagrant provision
 
 [![Azure](http://azuredeploy.net/deploybutton.png)](http://baresquesada.cloudapp.net/rango/) 
 
-[![presentacionDrive](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/presentaciones-de-google_zpscrs2j4w0.png = 70x70)](https://drive.google.com/open?id=1DVSnMu__rG9KGR-q_V1Uhn9PiZZBFtWmHxzygyiZpU8)
+[![presentacionDrive](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/presentaciones-de-google_zpscrs2j4w0.png =70x70)](https://drive.google.com/open?id=1DVSnMu__rG9KGR-q_V1Uhn9PiZZBFtWmHxzygyiZpU8)
 
 Para realizar el despliegue en un IaaS (Infrastructure as a Service) que en mi caso ha sido en Azure, podemos desplegar la aplicación automáticamente con el script [despliegueAzure.sh](https://github.com/pedrogazquez/appBares/blob/master/VAGRANT-baresquesada/despliegueAzure.sh) ejecutando **./despliegueAzure.sh** que contiene lo siguiente:
 
