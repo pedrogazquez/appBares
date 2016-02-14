@@ -2,6 +2,8 @@
 
 [![Azure](http://azuredeploy.net/deploybutton.png)](http://baresquesada.cloudapp.net/rango/) 
 
+[![presentacionDrive](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/rsz_presentaciones-de-google_zpsy1appnb5.png)](https://drive.google.com/open?id=1DVSnMu__rG9KGR-q_V1Uhn9PiZZBFtWmHxzygyiZpU8)
+
 Lo que he hecho para realizar esta tarea es configurar Vagrant que sirve para crear y configurar entornos de despligue virtual (máquinas virtuales) y Ansible que sirve para hacer el despliegue de la app y realizar las distintas tareas de configuración y ejecución de esta.
 
 Lo primero que hecho ha sido descargar la imagen de Vagrant, he instalado la versión estable más reciente que es la de [Vagrant 1.8.1x86_64.deb](https://releases.hashicorp.com/vagrant/1.8.1/).
