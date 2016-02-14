@@ -1,4 +1,7 @@
 # Despliegue remoto: Fabric
+
+[![presentacionDrive](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/rsz_presentaciones-de-google_zpsy1appnb5.png)](https://drive.google.com/open?id=1DVSnMu__rG9KGR-q_V1Uhn9PiZZBFtWmHxzygyiZpU8)
+
 [Fabric](http://www.fabfile.org/) es una librería y herramienta de línea de comandos de Python que usaremos con la finalidad de hacer más eficiente el uso de SSH para el despliegue de nuestra app. 
 Lo primero que hacemos es instalar Fabric con:
 
